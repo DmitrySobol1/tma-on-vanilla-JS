@@ -14,9 +14,14 @@ window.Telegram.WebApp.enableClosingConfirmation()
 
 
 
-Telegram.WebApp.onEvent('popupClosed', () => {
-  saveandcloseapp();
+Telegram.WebApp.onEvent('close', () => {
+  saveandcloseapp(); 
+  setTimeout(() => {
+    window.Telegram.WebApp.close(); 
+  }, 2000);
 });
+
+
 
 
 
