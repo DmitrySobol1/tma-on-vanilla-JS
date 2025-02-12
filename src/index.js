@@ -1,12 +1,14 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
-// const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
+const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
 const initdata = window.Telegram.WebApp.initData
 const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
 const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
 
 const iddiv = document.getElementById('iddiv')
-// iddiv.textContent = tlgid
+iddiv.textContent = tlgid
+
+
 
 async function getScoreFromD() {
   try {
@@ -115,7 +117,7 @@ savebtn.addEventListener('click', function () {
         'id': '',
         'initDataString':initdata,
         'initDataUnsafehash':initDataUnsafehash,
-        'initDataUnsafehfull':initDataUnsafehfull
+        'initDataUnsafefull':initDataUnsafefull
     }),
     headers: {
         'Content-Type': 'application/json'
