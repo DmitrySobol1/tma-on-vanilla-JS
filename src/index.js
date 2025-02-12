@@ -14,7 +14,7 @@ window.Telegram.WebApp.enableClosingConfirmation()
 
 
 
-Telegram.WebApp.onEvent('close', () => {
+Telegram.WebApp.onEvent(close, () => {
   saveandcloseapp(); 
   setTimeout(() => {
     window.Telegram.WebApp.close(); 
