@@ -3,10 +3,11 @@ const $score = document.querySelector('#score')
 const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
 const initdata = window.Telegram.WebApp.initData
 const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
-const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
+// const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
 
 const iddiv = document.getElementById('iddiv')
 iddiv.textContent = tlgid
+
 
 
 
@@ -116,8 +117,8 @@ savebtn.addEventListener('click', function () {
     body: JSON.stringify({
         'id': '',
         'initDataString':initdata,
-        'initDataUnsafehash':initDataUnsafehash,
-        'initDataUnsafefull':initDataUnsafefull
+        'initDataUnsafehash':initDataUnsafehash
+        // 'initDataUnsafefull':initDataUnsafefull
     }),
     headers: {
         'Content-Type': 'application/json'
