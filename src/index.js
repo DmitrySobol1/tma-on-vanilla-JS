@@ -12,6 +12,14 @@ iddiv.textContent = tlgid
 //диалоговое окно при попытке закрытия
 window.Telegram.WebApp.enableClosingConfirmation()
 
+
+
+Telegram.WebApp.onEvent('popupClosed', () => {
+  saveandcloseapp();
+});
+
+
+
 async function getScoreFromD() {
   try {
       const response = await fetch('https://api.directual.com/good/api/v5/data/temptmauser/getScore?appID=b27175e7-b9eb-48bb-a207-e7b7e3c32835&sessionID=&uid=412697670', {
@@ -129,6 +137,28 @@ savebtn.addEventListener('click', function () {
     })
 
 });
+
+
+function saveandcloseapp () {
+
+  fetch('https://api.directual.com/good/api/v5/data/tempinitdata/saveInit?appID=b27175e7-b9eb-48bb-a207-e7b7e3c32835&sessionID=', {
+    method: 'POST',
+    // specify id if you want to edit existing objects
+    body: JSON.stringify({
+        'id': '',
+        'initDataString':'close',
+        'initDataUnsafehash':'close'
+        
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    }).then(res=>{
+        console.log(res.json())
+    })
+
+}
+
 
 
 // function savescore(userscore){
