@@ -15,16 +15,16 @@ iddiv.textContent = tlgid
 window.Telegram.WebApp.enableClosingConfirmation()
 
 
-// главная кнопка
-tg.MainButton.text = "кнопка3"; //изменяем текст кнопки 
-tg.MainButton.show()
+// // главная кнопка
+// tg.MainButton.text = "кнопка3"; //изменяем текст кнопки 
+// tg.MainButton.show()
 
 
-// Пример отслеживания события - не работает
-Telegram.WebApp.onEvent(mainButtonClicked, function(){
-	window.Telegram.WebApp.close();
+// // Пример отслеживания события - не работает
+// Telegram.WebApp.onEvent(mainButtonClicked, function(){
+// 	window.Telegram.WebApp.close();
 	
-});
+// });
 
 
 
@@ -159,44 +159,10 @@ savebtn.addEventListener('click', function () {
 });
 
 
-function saveandcloseapp () {
-
-  fetch('https://api.directual.com/good/api/v5/data/tempinitdata/saveInit?appID=b27175e7-b9eb-48bb-a207-e7b7e3c32835&sessionID=', {
-    method: 'POST',
-    // specify id if you want to edit existing objects
-    body: JSON.stringify({
-        'id': '',
-        'initDataString':'close',
-        'initDataUnsafehash':'close'
-        
-    }),
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    }).then(res=>{
-        console.log(res.json())
-    })
-
-}
 
 
 
-// function savescore(userscore){
-//   fetch('https://api.directual.com/good/api/v5/data/savescore/savescore?appID=131a686f-8dc6-4b21-9593-d50e9ca2f3df&sessionID=', {
-//     method: 'POST',
-//     // specify id if you want to edit existing objects
-//     body: JSON.stringify({
-//         'id': '111',
-//           'score': userscore,
-//    'user_id': '333'
-//     }),
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     }).then(res=>{
-//         console.log(res.json())
-//     })
-// }
+
 
 
 start()
