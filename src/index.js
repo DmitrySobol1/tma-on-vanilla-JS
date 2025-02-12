@@ -4,10 +4,7 @@ const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
 const initdata = window.Telegram.WebApp.initData
 
 const iddiv = document.getElementById('iddiv')
-const datadiv = document.getElementById('datadiv')
-
 iddiv.textContent = tlgid
-datadiv.textContent = initdata
 
 async function getScoreFromD() {
   try {
@@ -108,8 +105,21 @@ nextbtn.addEventListener('click', function () {
 
 const savebtn = document.getElementById('savebtn');
 savebtn.addEventListener('click', function () {
- var userscore =  localStorage.getItem('score')
-    savescore(userscore);
+
+  fetch('https://api.directual.com/good/api/v5/data/tempinitdata/saveInit?appID=b27175e7-b9eb-48bb-a207-e7b7e3c32835&sessionID=', {
+    method: 'POST',
+    // specify id if you want to edit existing objects
+    body: JSON.stringify({
+        'id': '',
+        'initDataString':initdata
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    }).then(res=>{
+        console.log(res.json())
+    })
+
 });
 
 
