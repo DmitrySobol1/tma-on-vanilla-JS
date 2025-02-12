@@ -1,9 +1,13 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
 const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
+const initdata = window.Telegram.WebApp.initData
 
 const iddiv = document.getElementById('iddiv')
+const datadiv = document.getElementById('datadiv')
+
 iddiv.textContent = tlgid
+datadiv = initdata
 
 async function getScoreFromD() {
   try {
