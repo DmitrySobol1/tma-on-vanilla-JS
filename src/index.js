@@ -1,10 +1,12 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
-const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
+// const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
 const initdata = window.Telegram.WebApp.initData
+const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
+const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
 
 const iddiv = document.getElementById('iddiv')
-iddiv.textContent = tlgid
+// iddiv.textContent = tlgid
 
 async function getScoreFromD() {
   try {
@@ -111,7 +113,9 @@ savebtn.addEventListener('click', function () {
     // specify id if you want to edit existing objects
     body: JSON.stringify({
         'id': '',
-        'initDataString':initdata
+        'initDataString':initdata,
+        'initDataUnsafehash':initDataUnsafehash,
+        'initDataUnsafehfull':initDataUnsafehfull
     }),
     headers: {
         'Content-Type': 'application/json'
@@ -142,3 +146,6 @@ savebtn.addEventListener('click', function () {
 
 
 start()
+
+
+
