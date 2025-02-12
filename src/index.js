@@ -16,13 +16,13 @@ window.Telegram.WebApp.enableClosingConfirmation()
 
 
 // главная кнопка
-tg.MainButton.text = "кнопка2"; //изменяем текст кнопки 
+tg.MainButton.text = "кнопка3"; //изменяем текст кнопки 
 tg.MainButton.show()
 
 
 // Пример отслеживания события - не работает
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
-	tg.close();
+Telegram.WebApp.onEvent(mainButtonClicked, function(){
+	window.Telegram.WebApp.close();
 	
 });
 
