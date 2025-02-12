@@ -16,10 +16,15 @@ window.Telegram.WebApp.enableClosingConfirmation()
 
 
 tg.MainButton.text = "главная кнопка"; //изменяем текст кнопки 
-tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 
 tg.MainButton.show()
+
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	
+});
 
 
 
