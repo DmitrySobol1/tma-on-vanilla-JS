@@ -15,13 +15,13 @@ iddiv.textContent = tlgid
 window.Telegram.WebApp.enableClosingConfirmation()
 
 
-tg.MainButton.text = "главная кнопка"; //изменяем текст кнопки 
-tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
-tg.MainButton.color = "#1cba8b"; //изменяем цвет бэкграунда кнопки
-
+// главная кнопка
+tg.MainButton.text = "кнопка1"; //изменяем текст кнопки 
 tg.MainButton.show()
 
-Telegram.WebApp.onEvent('mainButtonClicked', function(){
+
+// Пример отслеживания события
+Telegram.WebApp.onEvent(mainButtonClicked, function(){
 	tg.close();
 	
 });
