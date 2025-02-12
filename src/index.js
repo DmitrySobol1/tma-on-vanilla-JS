@@ -2,6 +2,8 @@ const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
 const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
 
+const tg = window.Telegram.WebApp
+
 const initdata = window.Telegram.WebApp.initData
 const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
 // const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
@@ -13,14 +15,21 @@ iddiv.textContent = tlgid
 window.Telegram.WebApp.enableClosingConfirmation()
 
 
+tg.MainButton.text = "главная кнопка"; //изменяем текст кнопки 
+tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+
+tg.MainButton.show()
 
 
-Telegram.WebApp.onEvent('popupClosed', function(){
-  saveandcloseapp(); 
-  setTimeout(() => {
-    window.Telegram.WebApp.close(); 
-  }, 2000);
-});
+
+
+// Telegram.WebApp.onEvent('popupClosed', function(){
+//   saveandcloseapp(); 
+//   setTimeout(() => {
+//     window.Telegram.WebApp.close(); 
+//   }, 2000);
+// });
 
 
 
