@@ -1,6 +1,7 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
 const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
+
 const initdata = window.Telegram.WebApp.initData
 const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
 // const initDataUnsafefull = window.Telegram.WebApp.initDataUnsafe
@@ -8,8 +9,8 @@ const initDataUnsafehash = window.Telegram.WebApp.initDataUnsafe.hash
 const iddiv = document.getElementById('iddiv')
 iddiv.textContent = tlgid
 
-
-
+//диалоговое окно при попытке закрытия
+window.Telegram.WebApp.enableClosingConfirmation()
 
 async function getScoreFromD() {
   try {
