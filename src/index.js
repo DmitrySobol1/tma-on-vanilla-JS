@@ -7,7 +7,7 @@ const iddiv = document.getElementById('iddiv')
 const datadiv = document.getElementById('datadiv')
 
 iddiv.textContent = tlgid
-datadiv = initdata
+datadiv.textContent = initdata
 
 async function getScoreFromD() {
   try {
