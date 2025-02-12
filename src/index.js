@@ -1,9 +1,13 @@
 const $circle = document.querySelector('#circle')
 const $score = document.querySelector('#score')
+const tlgid = window.Telegram.WebApp.initDataUnsafe.user.id
+
+const iddiv = document.getElementById('iddiv')
+iddiv.textContent = tlgid
 
 async function getScoreFromD() {
   try {
-      const response = await fetch('https://api.directual.com/good/api/v5/data/getscore/getscore?appID=131a686f-8dc6-4b21-9593-d50e9ca2f3df&sessionID=&user=412697670', {
+      const response = await fetch('https://api.directual.com/good/api/v5/data/temptmauser/getScore?appID=b27175e7-b9eb-48bb-a207-e7b7e3c32835&sessionID=&uid=412697670', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/json'
@@ -105,22 +109,22 @@ savebtn.addEventListener('click', function () {
 });
 
 
-function savescore(userscore){
-  fetch('https://api.directual.com/good/api/v5/data/savescore/savescore?appID=131a686f-8dc6-4b21-9593-d50e9ca2f3df&sessionID=', {
-    method: 'POST',
-    // specify id if you want to edit existing objects
-    body: JSON.stringify({
-        'id': '111',
-          'score': userscore,
-   'user_id': '333'
-    }),
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    }).then(res=>{
-        console.log(res.json())
-    })
-}
+// function savescore(userscore){
+//   fetch('https://api.directual.com/good/api/v5/data/savescore/savescore?appID=131a686f-8dc6-4b21-9593-d50e9ca2f3df&sessionID=', {
+//     method: 'POST',
+//     // specify id if you want to edit existing objects
+//     body: JSON.stringify({
+//         'id': '111',
+//           'score': userscore,
+//    'user_id': '333'
+//     }),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     }).then(res=>{
+//         console.log(res.json())
+//     })
+// }
 
 
 start()
